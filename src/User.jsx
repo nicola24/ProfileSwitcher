@@ -1,65 +1,78 @@
 import React from 'react';
-import {GridList, GridTile} from 'material-ui/GridList';
-import Paper from 'material-ui/Paper';
+import { GridList, GridTile } from 'material-ui/GridList';
+import { List, ListItem } from 'material-ui/List';
+import AppBar from 'material-ui/AppBar';
+import Face from 'material-ui/svg-icons/action/face';
+import Earth from 'material-ui/svg-icons/action/language';
+import Call from 'material-ui/svg-icons/communication/call';
+import Chat from 'material-ui/svg-icons/communication/chat';
+import Email from 'material-ui/svg-icons/communication/email';
+import Business from 'material-ui/svg-icons/communication/business';
+import Location from 'material-ui/svg-icons/maps/pin-drop';
+import MyLocation from 'material-ui/svg-icons/maps/my-location';
+import Direction from 'material-ui/svg-icons/maps/directions';
+import Navigation from 'material-ui/svg-icons/maps/navigation';
+import Assignment from 'material-ui/svg-icons/action/assignment-ind';
+import Build from 'material-ui/svg-icons/action/build';
+// import { blue500 } from 'material-ui/styles/colors';
 import PropTypes from 'prop-types';
 
 const styles = {
   root: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
   },
   gridList: {
-    width: 500,
-    height: 500,
+    width: 700,
+    height: 700,
     overflowY: 'auto',
-  },
-  paper: {
-    height: 100,
-    width: 100,
-    margin: 20,
-    textAlign: 'center',
-    display: 'inline-block',
   },
 };
 
 const User = ({ singleUser }) => (
   <div style={styles.root}>
     <GridList
-      cellHeight={250}
+      cols={2}
+      cellHeight="340"
+      padding={1}
       style={styles.gridList}
     >
-      <GridTile className="animated slideInLeft">
-        <Paper style={styles.paper} zDepth={3} rounded={false}>
-          <img src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt="profile_photo" height="100" width="100" />
-        </Paper>
+      <GridTile className="animated fadeInLeft">
+        <img src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt="profile_photo" />
       </GridTile>
-      <GridTile className="animated slideInLeft">
-        <Paper style={styles.paper} zDepth={3} rounded={false}>
-          <h2>Profile</h2>
-          <p>{singleUser.name}</p>
-          <p>{singleUser.username}</p>
-          <p>{singleUser.email}</p>
-          <p>{singleUser.phone}</p>
-          <p>{singleUser.website}</p>
-        </Paper>
+      <GridTile className="animated fadeInLeft">
+        <List>
+          <ListItem>
+            <AppBar title="Profile" showMenuIconButton={false} />
+          </ListItem>
+          <ListItem primaryText={singleUser.name} leftIcon={<Face />} />
+          <ListItem primaryText={singleUser.username} leftIcon={<Chat />} />
+          <ListItem primaryText={(singleUser.email).toLowerCase()} leftIcon={<Email />} />
+          <ListItem primaryText={singleUser.phone} leftIcon={<Call />} />
+          <ListItem primaryText={`www.${singleUser.website}`} leftIcon={<Earth />} />
+        </List>
       </GridTile>
-      <GridTile className="animated slideInRight">
-        <Paper style={styles.paper} zDepth={3} rounded={false}>
-          <h2>About Me</h2>
-          <p>{singleUser.company.name}</p>
-          <p>{singleUser.company.catchPhrase}</p>
-          <p>{singleUser.company.bs}</p>
-        </Paper>
+      <GridTile className="animated fadeInRight">
+        <List>
+          <ListItem>
+            <AppBar title="About Me" showMenuIconButton={false} />
+          </ListItem>
+          <ListItem primaryText={singleUser.company.name} leftIcon={<Business />} />
+          <ListItem primaryText={singleUser.company.catchPhrase} leftIcon={<Assignment />} />
+          <ListItem primaryText={singleUser.company.bs} leftIcon={<Build />} />
+        </List>
       </GridTile>
-      <GridTile className="animated slideInRight">
-        <Paper style={styles.paper} zDepth={3} rounded={false}>
-          <h2>Address</h2>
-          <p>{singleUser.address.street}</p>
-          <p>{singleUser.address.suite}</p>
-          <p>{singleUser.address.city}</p>
-          <p>{singleUser.address.zipcode}</p>
-        </Paper>
+      <GridTile className="animated fadeInRight">
+        <List>
+          <ListItem>
+            <AppBar title="Address" showMenuIconButton={false} />
+          </ListItem>
+          <ListItem primaryText={singleUser.address.street} leftIcon={<Location />} />
+          <ListItem primaryText={singleUser.address.suite} leftIcon={<MyLocation />} />
+          <ListItem primaryText={singleUser.address.city} leftIcon={<Navigation />} />
+          <ListItem primaryText={singleUser.address.zipcode} leftIcon={<Direction />} />
+        </List>
       </GridTile>
     </GridList>
   </div>
@@ -71,59 +84,3 @@ User.propTypes = {
 };
 
 export default User;
-
-
-// import React from 'react';
-// import {GridList, GridTile} from 'material-ui/GridList';
-// import IconButton from 'material-ui/IconButton';
-// import Subheader from 'material-ui/Subheader';
-// import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-//
-// const styles = {
-//   root: {
-//     display: 'flex',
-//     flexWrap: 'wrap',
-//     justifyContent: 'space-around',
-//   },
-//   gridList: {
-//     width: 500,
-//     height: 450,
-//     overflowY: 'auto',
-//   },
-// };
-//
-// const tilesData = [
-//   {
-//     img: 'images/grid-list/00-52-29-429_640.jpg',
-//     title: 'Breakfast',
-//     author: 'jill111',
-//   },
-//   {
-//     img: 'images/grid-list/burger-827309_640.jpg',
-//     title: 'Tasty burger',
-//     author: 'pashminu',
-//   },
-// ];
-//
-// const GridListExampleSimple = () => (
-//   <div style={styles.root}>
-//     <GridList
-//       cellHeight={180}
-//       style={styles.gridList}
-//     >
-//       <Subheader>December</Subheader>
-//       {tilesData.map((tile) => (
-//         <GridTile
-//           key={tile.img}
-//           title={tile.title}
-//           subtitle={<span>by <b>{tile.author}</b></span>}
-//           actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
-//         >
-//           <img src={tile.img} />
-//         </GridTile>
-//       ))}
-//     </GridList>
-//   </div>
-// );
-//
-// export default GridListExampleSimple;
