@@ -14,6 +14,7 @@ import Direction from 'material-ui/svg-icons/maps/directions';
 import Navigation from 'material-ui/svg-icons/maps/navigation';
 import Assignment from 'material-ui/svg-icons/action/assignment-ind';
 import Build from 'material-ui/svg-icons/action/build';
+import { Card, CardMedia, CardTitle } from 'material-ui/Card';
 // import { blue500 } from 'material-ui/styles/colors';
 import PropTypes from 'prop-types';
 
@@ -38,22 +39,27 @@ const User = ({ singleUser }) => (
       padding={1}
       style={styles.gridList}
     >
-      <GridTile className="animated fadeInLeft">
-        <img src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt="profile_photo" />
+      <GridTile className="animated bounceInLeft">
+        <Card>
+          <CardMedia
+            overlay={<CardTitle title={singleUser.name} />}
+          >
+            <img src="http://localhost:3000/img/profile-photo.png" alt="profile_photo" />
+          </CardMedia>
+        </Card>
       </GridTile>
-      <GridTile className="animated fadeInLeft">
+      <GridTile className="animated bounceInLeft">
         <List>
           <ListItem>
             <AppBar title="Profile" showMenuIconButton={false} />
           </ListItem>
-          <ListItem primaryText={singleUser.name} leftIcon={<Face />} />
           <ListItem primaryText={singleUser.username} leftIcon={<Chat />} />
           <ListItem primaryText={(singleUser.email).toLowerCase()} leftIcon={<Email />} />
           <ListItem primaryText={singleUser.phone} leftIcon={<Call />} />
           <ListItem primaryText={`www.${singleUser.website}`} leftIcon={<Earth />} />
         </List>
       </GridTile>
-      <GridTile className="animated fadeInRight">
+      <GridTile className="animated bounceInRight">
         <List>
           <ListItem>
             <AppBar title="About Me" showMenuIconButton={false} />
@@ -63,7 +69,7 @@ const User = ({ singleUser }) => (
           <ListItem primaryText={singleUser.company.bs} leftIcon={<Build />} />
         </List>
       </GridTile>
-      <GridTile className="animated fadeInRight">
+      <GridTile className="animated bounceInRight">
         <List>
           <ListItem>
             <AppBar title="Address" showMenuIconButton={false} />
