@@ -43,18 +43,18 @@ class Main extends Component {
     return (
       <MuiThemeProvider>
         <div>
-          <div>
+          <div id="left">
             <FloatingActionButton onClick={this.handleClick} >
               <ChevronLeft />
             </FloatingActionButton>
           </div>
-          <div>
-            {this.state.user.map(x => <User singleUser={x} key={x.id} />)}
-          </div>
-          <div>
+          <div id="right">
             <FloatingActionButton onClick={this.handleClick}>
               <ChevronRight />
             </FloatingActionButton>
+          </div>
+          <div>
+            {this.state.user.map(x => <User singleUser={x} key={x.id} />)}
           </div>
         </div>
       </MuiThemeProvider>

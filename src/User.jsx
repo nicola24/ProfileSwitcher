@@ -2,7 +2,6 @@ import React from 'react';
 import { GridList, GridTile } from 'material-ui/GridList';
 import { List, ListItem } from 'material-ui/List';
 import AppBar from 'material-ui/AppBar';
-import Face from 'material-ui/svg-icons/action/face';
 import Earth from 'material-ui/svg-icons/action/language';
 import Call from 'material-ui/svg-icons/communication/call';
 import Chat from 'material-ui/svg-icons/communication/chat';
@@ -35,18 +34,22 @@ const User = ({ singleUser }) => (
   <div style={styles.root}>
     <GridList
       cols={2}
-      cellHeight="340"
+      cellHeight={340}
       padding={1}
       style={styles.gridList}
     >
       <GridTile className="animated bounceInLeft">
-        <Card>
-          <CardMedia
-            overlay={<CardTitle title={singleUser.name} />}
-          >
-            <img src="http://localhost:3000/img/profile-photo.png" alt="profile_photo" />
-          </CardMedia>
-        </Card>
+        <List>
+          <ListItem>
+            <Card>
+              <CardMedia
+                overlay={<CardTitle title={singleUser.name} />}
+              >
+                <img src="http://localhost:3000/img/profile-photo.png" alt="profile_photo" />
+              </CardMedia>
+            </Card>
+          </ListItem>
+        </List>
       </GridTile>
       <GridTile className="animated bounceInLeft">
         <List>
