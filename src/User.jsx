@@ -14,7 +14,7 @@ import Navigation from 'material-ui/svg-icons/maps/navigation';
 import Assignment from 'material-ui/svg-icons/action/assignment-ind';
 import Build from 'material-ui/svg-icons/action/build';
 import { Card, CardMedia, CardTitle } from 'material-ui/Card';
-// import { blue500 } from 'material-ui/styles/colors';
+
 import PropTypes from 'prop-types';
 
 const styles = {

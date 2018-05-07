@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ChevronLeft from 'material-ui/svg-icons/navigation/chevron-left';
 import ChevronRight from 'material-ui/svg-icons/navigation/chevron-right';
 import axios from 'axios';
 
 import User from './User';
+import Header from './Header';
 
 class Main extends Component {
   constructor() {
@@ -41,15 +44,18 @@ class Main extends Component {
 
   render() {
     return (
-      <MuiThemeProvider>
+      <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
         <div>
+          <div>
+            <Header />
+          </div>
           <div id="left">
-            <FloatingActionButton onClick={this.handleClick} >
+            <FloatingActionButton onClick={this.handleClick} className="animated flip" >
               <ChevronLeft />
             </FloatingActionButton>
           </div>
           <div id="right">
-            <FloatingActionButton onClick={this.handleClick}>
+            <FloatingActionButton onClick={this.handleClick} className="animated flip">
               <ChevronRight />
             </FloatingActionButton>
           </div>
