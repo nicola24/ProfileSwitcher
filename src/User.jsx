@@ -57,7 +57,7 @@ const User = ({ singleUser }) => (
             <AppBar title="Profile" showMenuIconButton={false} />
           </ListItem>
           <ListItem primaryText={singleUser.username} leftIcon={<Chat />} />
-          <ListItem primaryText={(singleUser.email).toLowerCase()} leftIcon={<Email />} />
+          <ListItem primaryText={singleUser.email} leftIcon={<Email />} />
           <ListItem primaryText={singleUser.phone} leftIcon={<Call />} />
           <ListItem primaryText={`www.${singleUser.website}`} leftIcon={<Earth />} />
         </List>
