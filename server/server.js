@@ -15,11 +15,4 @@ app.get('/user', (req, res) => {
   request(options).pipe(res);
 });
 
-// app.get('/user/photo', (req, res) => {
-//   const options = {
-//     url: `https://reqres.in/api/users/${randomNum()}`,
-//   };
-//   request(options).pipe(res);
-// });
-
 app.listen(port, () => console.log(`App listening on port ${port}!`));
