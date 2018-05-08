@@ -22,4 +22,4 @@ app.get('/user', (req, res) => {
 //   request(options).pipe(res);
 // });
 
-app.listen(process.env.PORT || port, () => console.log(`App listening on port ${port}!`));
+app.listen(port, () => console.log(`App listening on port ${port}!`));
