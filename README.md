@@ -4,7 +4,7 @@ ProfileSwitcher is a dynamic web application
 
 :point_right: [profile-switcher.herokuapp.com](https://profile-switcher.herokuapp.com/)
 
-## UP & RUNNING
+## Up & Running
 Install dependencies:
 ```
 $ npm install
