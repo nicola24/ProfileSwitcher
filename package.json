@@ -7,7 +7,7 @@
     "start": "npm run build && NODE_ENV=production node server/server.js",
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production",
-    "heroku-prebuild": "npm install --production=false",
+    "heroku-prebuild": "npm install --production=false"
   },
   "repository": {
     "type": "git",
