@@ -45,7 +45,7 @@ const User = ({ singleUser }) => (
               <CardMedia
                 overlay={<CardTitle title={singleUser.name} />}
               >
-                <img src="http://localhost:3000/img/profile-photo.png" alt="profile_photo" />
+                <img src="https://i.imgur.com/0zyR5DE.png" alt="profile_photo" />
               </CardMedia>
             </Card>
           </ListItem>
