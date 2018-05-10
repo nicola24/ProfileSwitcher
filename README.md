@@ -1,6 +1,6 @@
 # Profile Switcher
 
-ProfileSwitcher is a dynamic web application
+ProfileSwitcher is a small dynamic React web application.
 
 :point_right: [profile-switcher.herokuapp.com](https://profile-switcher.herokuapp.com/)
 
